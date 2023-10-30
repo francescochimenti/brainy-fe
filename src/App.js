@@ -2,6 +2,7 @@ import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Login from "./pages/login/Login";
 import ProtectedRoutes from "./middlewares/ProtectedRoutes";
+import BranyVideo from "./components/brainyVideo/BranyVideo";
 
 const App = () => {
   return (
@@ -10,7 +11,7 @@ const App = () => {
         <Route path="/" element={<Login />} />
 
         <Route element={<ProtectedRoutes />}>
-          <Route path="/home" element={<h1>Protected</h1>} />
+          <Route path="/home" element={<BranyVideo />} />
         </Route>
       </Routes>
     </BrowserRouter>
