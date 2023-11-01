@@ -1,9 +1,14 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./login.css";
 import { useNavigate } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { loginReducer } from "../../reducers/loginReducer";
 
 const Login = () => {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const token = useSelector((state) => state.login.loginData.token);
+  const error = useSelector((state) => state.login.error);
 
   const [loginData, setLoginData] = useState({});
 
@@ -19,30 +24,24 @@ const Login = () => {
   const onSubmit = async (e) => {
     e.preventDefault();
 
-    try {
-      const response = await fetch(
-        `${process.env.REACT_APP_SERVER_BASE_URL}/login`,
-        {
-          headers: {
-            "Content-Type": "application/json",
-          },
-          method: "POST",
-          body: JSON.stringify(loginData),
-        },
-      );
-      const data = await response.json();
-
-      if (data.token) {
-        localStorage.setItem("loggedInUser", JSON.stringify(data.token));
-        navigate("/home");
-      }
-    } catch (error) {
-      console.log(error);
-    }
+    dispatch(loginReducer(loginData));
   };
 
+  useEffect(() => {
+    if (token) {
+      localStorage.setItem("loggedInUser", JSON.stringify(token));
+      navigate("/home");
+    }
+    if (localStorage.getItem("loggedInUser")) {
+      navigate("/home");
+    }
+    if (!localStorage.getItem("loggedInUser")) {
+      navigate("/");
+    }
+  }, [token, navigate]);
+
   return (
-    <section class="h-screen bg-gray-50 pt-10 dark:bg-gray-900 md:pt-32">
+    <section class="h-screen bg-gray-50 pt-10 dark:bg-gray-900 xl:pt-32">
       <div class="mx-auto grid max-w-screen-xl gap-8 px-4 py-8 lg:grid-cols-2 lg:gap-16 lg:py-16">
         <div class="flex flex-col justify-center">
           <h1 class="mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 dark:text-white md:text-5xl lg:text-6xl">
@@ -81,7 +80,7 @@ const Login = () => {
             <h2 class="text-2xl font-bold text-gray-900 dark:text-white">
               Sign in to Brainy
             </h2>
-            <form class="mt-8 space-y-6" action="#">
+            <form class="mt-8 space-y-6" action="#" onSubmit={onSubmit}>
               <div>
                 <label
                   for="email"
@@ -116,10 +115,14 @@ const Login = () => {
                   onChange={handleInputChange}
                 />
               </div>
+              {error && (
+                <p className="text-md font-semibold text-red-500">
+                  Incorrect email or password.
+                </p>
+              )}
               <button
                 type="submit"
                 class="w-full rounded-lg bg-blue-700 px-5 py-3 text-center text-base font-medium text-white hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 sm:w-auto"
-                onClick={onSubmit}
               >
                 Login to your account
               </button>

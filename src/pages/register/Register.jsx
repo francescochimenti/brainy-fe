@@ -26,7 +26,6 @@ const Register = () => {
         `${process.env.REACT_APP_SERVER_BASE_URL}/users/upload`,
         fileData,
       );
-      console.log("File caricato con successo:", response.data);
       return response.data;
     } catch (error) {
       console.log("Si è verificato un errore:", error);
@@ -36,25 +35,19 @@ const Register = () => {
   const handleSubmit = async (event) => {
     event.preventDefault();
 
-    // check if the file is not null
     if (file) {
       try {
-        // upload the file
         const uploadedFile = await uploadFile(file);
-        // add the cover to the formData
         const finalBody = {
           ...registerData,
           avatar: uploadedFile.avatar,
         };
-        console.log("finalBody:", finalBody);
-        const response = await axios.post(
+        await axios.post(
           `${process.env.REACT_APP_SERVER_BASE_URL}/users/create`,
           finalBody,
           { headers: { "Content-Type": "application/json" } },
         );
-        console.log("Post creato con successo:", response.data);
         setFile(null);
-        console.log("uploadedFile:", uploadedFile);
       } catch (error) {
         console.log("Si è verificato un errore:", error);
       }
