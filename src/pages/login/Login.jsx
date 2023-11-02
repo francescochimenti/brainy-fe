@@ -114,7 +114,7 @@ const Login = () => {
                 />
               </div>
               {error && (
-                <p classNameName="text-md font-semibold text-red-500">
+                <p className="text-md font-semibold text-red-500">
                   Incorrect email or password.
                 </p>
               )}

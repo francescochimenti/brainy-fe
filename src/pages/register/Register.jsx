@@ -12,6 +12,8 @@ const Register = () => {
   const navigate = useNavigate();
   const token = useSelector((state) => state.login.loginData.token);
   const [loading, setLoading] = useState(false);
+  const [correctPsw, setCorrectPsw] = useState("");
+  const [passChecker, setPassChecker] = useState(false);
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -42,6 +44,12 @@ const Register = () => {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
+    if (registerData.password !== correctPsw) {
+      setPassChecker(true);
+      return;
+    }
+
+    setPassChecker(false);
     setLoading(true);
 
     if (file) {
@@ -234,8 +242,16 @@ const Register = () => {
                   placeholder="••••••••"
                   className="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
                   required
+                  onChange={(e) => {
+                    setCorrectPsw(e.target.value);
+                  }}
                 />
               </div>
+              {passChecker && (
+                <p className="text-md font-semibold text-red-500">
+                  Passwords don't match.
+                </p>
+              )}
               <button
                 type="submit"
                 className="w-full rounded-lg bg-blue-700 px-5 py-3 text-center text-base font-medium text-white hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 sm:w-auto"
