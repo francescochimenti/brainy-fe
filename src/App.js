@@ -1,22 +1,28 @@
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Login from "./pages/login/Login";
 import ProtectedRoutes from "./middlewares/ProtectedRoutes";
 import Home from "./pages/home/Home";
-import Register from "./pages/register/Register";
+import Auth from "./pages/auth/Auth";
+import NewAuth from "./pages/newAuth/NewAuth";
+import Profile from "./pages/profile/Profile";
+import About from "./pages/about/About";
 
 const App = () => {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Login />} />
-        <Route path="/register" element={<Register />} />
+    <div className="bg-white dark:bg-gray-900">
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Auth />} />
+          <Route path="/register" element={<NewAuth />} />
 
-        <Route element={<ProtectedRoutes />}>
-          <Route path="/home" element={<Home />} />
-        </Route>
-      </Routes>
-    </BrowserRouter>
+          <Route element={<ProtectedRoutes />}>
+            <Route path="/home" element={<Home />} />
+            <Route path="/profile" element={<Profile />} />
+            <Route path="/about" element={<About />} />
+          </Route>
+        </Routes>
+      </BrowserRouter>
+    </div>
   );
 };
 

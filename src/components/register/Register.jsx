@@ -4,7 +4,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { loginReducer } from "../../reducers/loginReducer";
 import { BeatLoader } from "react-spinners";
-import Footer from "../../components/footer/Footer";
 
 const Register = () => {
   const [registerData, setRegisterData] = useState({});
@@ -90,7 +89,7 @@ const Register = () => {
     }
   }, [token, navigate]);
   return (
-    <section className="max-h-fit bg-white dark:bg-gray-900">
+    <section className="animate__animated animate__fadeInRight h-screen max-h-fit bg-white dark:bg-gray-900">
       <div className="mx-auto grid max-w-screen-xl gap-8 px-4 py-8 lg:grid-cols-2 lg:gap-16 lg:py-16">
         <div className="flex flex-col justify-center">
           <h1 className="mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 dark:text-white md:text-5xl lg:text-6xl">
@@ -116,9 +115,9 @@ const Register = () => {
             >
               <path
                 stroke="currentColor"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
                 d="M1 5h12m0 0L9 1m4 4L9 9"
               />
             </svg>
@@ -272,7 +271,6 @@ const Register = () => {
           </div>
         </div>
       </div>
-      <Footer />
     </section>
   );
 };
