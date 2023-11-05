@@ -1,24 +1,67 @@
-import React, { useEffect, useState } from "react";
-import axios from "axios";
+import React, { useEffect } from "react";
 import SinglePost from "../singlePost/SinglePost";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchPosts } from "../../reducers/postReducer";
 
 const PostContainer = () => {
-  const [posts, setPosts] = useState([]);
+  const dispatch = useDispatch();
+  const posts = useSelector((state) => state.posts.posts);
+  const postStatus = useSelector((state) => state.posts.status);
+  const error = useSelector((state) => state.posts.error);
 
   useEffect(() => {
-    const fetchPosts = async () => {
-      const res = await axios.get(
-        `${process.env.REACT_APP_SERVER_BASE_URL}/posts`,
-      );
-      setPosts(
-        res.data.posts.sort((a, b) => {
-          return new Date(b.createdAt) - new Date(a.createdAt);
-        }),
-      );
-      console.log(posts);
-    };
-    fetchPosts();
-  }, []);
+    if (postStatus === "idle") {
+      dispatch(fetchPosts());
+    }
+  }, [postStatus, dispatch]);
+
+  if (postStatus === "loading") {
+    return (
+      <section className="body-font bg-white text-gray-600 dark:bg-gray-900">
+        <div className="container mx-auto flex flex-col items-center justify-center gap-12  px-5 ">
+          {Array.from({ length: 3 }, (_, i) => (
+            <div
+              key={i}
+              role="status"
+              className=" w-full max-w-lg animate-pulse space-y-2.5"
+            >
+              <div className="flex w-full items-center space-x-2">
+                <div className="h-2.5 w-32 rounded-full bg-gray-200 dark:bg-gray-700"></div>
+                <div className="h-2.5 w-24 rounded-full bg-gray-300 dark:bg-gray-600"></div>
+                <div className="h-2.5 w-full rounded-full bg-gray-300 dark:bg-gray-600"></div>
+              </div>
+              <div className="flex w-full max-w-[480px] items-center space-x-2">
+                <div className="h-2.5 w-full rounded-full bg-gray-200 dark:bg-gray-700"></div>
+                <div className="h-2.5 w-full rounded-full bg-gray-300 dark:bg-gray-600"></div>
+                <div className="h-2.5 w-24 rounded-full bg-gray-300 dark:bg-gray-600"></div>
+              </div>
+              <div className="flex w-full max-w-[400px] items-center space-x-2">
+                <div className="h-2.5 w-full rounded-full bg-gray-300 dark:bg-gray-600"></div>
+                <div className="h-2.5 w-80 rounded-full bg-gray-200 dark:bg-gray-700"></div>
+                <div className="h-2.5 w-full rounded-full bg-gray-300 dark:bg-gray-600"></div>
+              </div>
+              <div className="flex w-full max-w-[480px] items-center space-x-2">
+                <div className="h-2.5 w-full rounded-full bg-gray-200 dark:bg-gray-700"></div>
+                <div className="h-2.5 w-full rounded-full bg-gray-300 dark:bg-gray-600"></div>
+                <div className="h-2.5 w-24 rounded-full bg-gray-300 dark:bg-gray-600"></div>
+              </div>
+              <div className="flex w-full max-w-[440px] items-center space-x-2">
+                <div className="h-2.5 w-32 rounded-full bg-gray-300 dark:bg-gray-600"></div>
+                <div className="h-2.5 w-24 rounded-full bg-gray-300 dark:bg-gray-600"></div>
+                <div className="h-2.5 w-full rounded-full bg-gray-200 dark:bg-gray-700"></div>
+              </div>
+              <div className="flex w-full max-w-[360px] items-center space-x-2">
+                <div className="h-2.5 w-full rounded-full bg-gray-300 dark:bg-gray-600"></div>
+                <div className="h-2.5 w-80 rounded-full bg-gray-200 dark:bg-gray-700"></div>
+                <div className="h-2.5 w-full rounded-full bg-gray-300 dark:bg-gray-600"></div>
+              </div>
+              <span className="sr-only">Loading...</span>
+            </div>
+          ))}
+        </div>
+      </section>
+    );
+  }
 
   return (
     <section className="body-font bg-white text-gray-600 dark:bg-gray-900">

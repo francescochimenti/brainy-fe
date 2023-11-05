@@ -1,10 +1,12 @@
 import React, { useState } from "react";
 import axios from "axios";
 import useSession from "../../hooks/useSession";
-
+import { fetchPosts } from "../../reducers/postReducer";
+import { useDispatch } from "react-redux";
 const NewPost = () => {
   const session = useSession();
   const [post, setPost] = useState({});
+  const dispatch = useDispatch();
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -25,6 +27,7 @@ const NewPost = () => {
       setPost({
         content: "",
       });
+      dispatch(fetchPosts());
     } catch (error) {
       console.log(error);
     }
