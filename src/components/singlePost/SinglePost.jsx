@@ -21,6 +21,7 @@ const SinglePost = ({ post }) => {
 
     return () => {
       if (postRef.current) {
+        // eslint-disable-next-line react-hooks/exhaustive-deps
         observer.unobserve(postRef.current);
       }
     };
@@ -44,9 +45,6 @@ const SinglePost = ({ post }) => {
         </a>
       </div>
       <div className="mt-2">
-        <a className="hover: text-2xl font-bold " href="/">
-          Accessibility tools for designers and developers
-        </a>
         <p className="mt-2 ">
           Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tempora
           expedita dicta totam aspernatur doloremque. Excepturi iste iusto eos
