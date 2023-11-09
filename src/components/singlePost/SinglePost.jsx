@@ -29,7 +29,7 @@ const SinglePost = ({ post }) => {
   return (
     <div
       ref={postRef}
-      className={`my-4 max-w-4xl rounded-lg bg-white px-10 py-6 text-gray-700 shadow-md dark:bg-slate-800 dark:text-white ${
+      className={`my-4 max-w-4xl rounded-lg bg-white px-10 py-6 text-gray-700 shadow-md dark:bg-slate-900 dark:text-white ${
         isVisible ? "animate__animated animate__bounceInLeft" : ""
       }`}
     >
@@ -45,13 +45,7 @@ const SinglePost = ({ post }) => {
         </a>
       </div>
       <div className="mt-2">
-        <p className="mt-2 ">
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tempora
-          expedita dicta totam aspernatur doloremque. Excepturi iste iusto eos
-          enim reprehenderit nisi, accusamus delectus nihil quis facere in modi
-          ratione libero!
-          {post.content}
-        </p>
+        <p className="mt-2 ">{post.content}</p>
       </div>
       <div className="mt-4 flex items-center justify-between">
         <a className="text-blue-600 hover:underline" href="/">

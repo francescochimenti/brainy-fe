@@ -3,7 +3,7 @@ import React from "react";
 const AboutBrainy = () => {
   return (
     <>
-      <section className="animate__animated animate__fadeInLeft bg-white dark:bg-gray-900">
+      <section className="animate__animated animate__fadeInLeft bg-white dark:bg-black">
         <div className="mx-auto max-w-screen-xl px-4 py-8 text-center lg:py-16">
           <h1 className="mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 dark:text-white md:text-5xl lg:text-6xl">
             Brainy: L'arte delle parole nell'era visiva
@@ -15,29 +15,31 @@ const AboutBrainy = () => {
             questo spazio dove il pensiero profondo e la riflessione sono
             sovrani.
           </p>
-          <div className="flex flex-col space-y-4 sm:flex-row sm:justify-center sm:space-x-4 sm:space-y-0">
-            <a
-              href="/login"
-              className="inline-flex items-center justify-center rounded-lg bg-blue-700 px-5 py-3 text-center text-base font-medium text-white hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 dark:focus:ring-blue-900"
-            >
-              Entra in Brainy
-              <svg
-                className="ml-2 h-3.5 w-3.5"
-                aria-hidden="true"
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 14 10"
+          {!localStorage.getItem("loggedInUser") ? (
+            <div className="flex flex-col space-y-4 sm:flex-row sm:justify-center sm:space-x-4 sm:space-y-0">
+              <a
+                href="/login"
+                className="inline-flex items-center justify-center rounded-lg bg-blue-700 px-5 py-3 text-center text-base font-medium text-white hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 dark:focus:ring-blue-900"
               >
-                <path
-                  stroke="currentColor"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M1 5h12m0 0L9 1m4 4L9 9"
-                />
-              </svg>
-            </a>
-          </div>
+                Entra in Brainy
+                <svg
+                  className="ml-2 h-3.5 w-3.5"
+                  aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 14 10"
+                >
+                  <path
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M1 5h12m0 0L9 1m4 4L9 9"
+                  />
+                </svg>
+              </a>
+            </div>
+          ) : null}
         </div>
       </section>
       <div className="grid grid-cols-2 gap-4 p-12 md:grid-cols-4">
@@ -134,29 +136,31 @@ const AboutBrainy = () => {
           </div>
         </div>
       </div>
-      <div className="mb-2 flex flex-col space-y-4 p-4 sm:flex-row sm:justify-center sm:space-x-4 sm:space-y-0">
-        <a
-          href="/login"
-          className="inline-flex items-center justify-center rounded-lg bg-blue-700 px-5 py-3 text-center text-base font-medium text-white hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 dark:focus:ring-blue-900"
-        >
-          Entra in Brainy
-          <svg
-            className="ml-2 h-3.5 w-3.5"
-            aria-hidden="true"
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 14 10"
+      {!localStorage.getItem("loggedInUser") ? (
+        <div className="flex flex-col space-y-4 sm:flex-row sm:justify-center sm:space-x-4 sm:space-y-0">
+          <a
+            href="/login"
+            className="inline-flex items-center justify-center rounded-lg bg-blue-700 px-5 py-3 text-center text-base font-medium text-white hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 dark:focus:ring-blue-900"
           >
-            <path
-              stroke="currentColor"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M1 5h12m0 0L9 1m4 4L9 9"
-            />
-          </svg>
-        </a>
-      </div>
+            Entra in Brainy
+            <svg
+              className="ml-2 h-3.5 w-3.5"
+              aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 14 10"
+            >
+              <path
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M1 5h12m0 0L9 1m4 4L9 9"
+              />
+            </svg>
+          </a>
+        </div>
+      ) : null}
     </>
   );
 };

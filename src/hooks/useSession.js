@@ -24,6 +24,7 @@ const useSession = () => {
       navigate("/", { replace: true });
     }
     checkTokenExpirationTime();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [navigate, session]);
 
   return decodedSession;

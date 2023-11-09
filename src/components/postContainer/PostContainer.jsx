@@ -7,7 +7,6 @@ const PostContainer = () => {
   const dispatch = useDispatch();
   const posts = useSelector((state) => state.posts.posts);
   const postStatus = useSelector((state) => state.posts.status);
-  const error = useSelector((state) => state.posts.error);
 
   useEffect(() => {
     if (postStatus === "idle") {
@@ -64,7 +63,7 @@ const PostContainer = () => {
   }
 
   return (
-    <section className="body-font bg-white text-gray-600 dark:bg-gray-900">
+    <section className="body-font bg-white text-gray-600 dark:bg-black">
       <div className="container mx-auto flex items-center justify-center px-5">
         <div className="grid grid-cols-1 gap-2">
           {posts &&

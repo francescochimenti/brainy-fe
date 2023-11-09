@@ -2,7 +2,7 @@ import React from "react";
 
 const Header = () => {
   return (
-    <section className="bg-white dark:bg-gray-900">
+    <section className="bg-white dark:bg-black">
       <div className="mx-auto max-w-screen-xl px-4 py-8 text-center">
         <h1 className="animate__animated animate__zoomInDown mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 dark:text-white md:text-5xl lg:text-6xl">
           Nurturing the Power of Words

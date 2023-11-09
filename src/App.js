@@ -9,7 +9,7 @@ import About from "./pages/about/About";
 
 const App = () => {
   return (
-    <div className="bg-white dark:bg-gray-900">
+    <div className="bg-white dark:bg-black">
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<About />} />
