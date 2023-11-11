@@ -29,7 +29,7 @@ const SinglePost = ({ post }) => {
   return (
     <div
       ref={postRef}
-      className={`my-4 max-w-4xl rounded-lg bg-white px-10 py-6 text-gray-700 shadow-md dark:bg-slate-900 dark:text-white ${
+      className={`my-4 max-w-4xl rounded-lg  bg-white px-10 py-6 text-gray-700 shadow-md dark:bg-slate-900 dark:text-white md:w-[600px] ${
         isVisible ? "animate__animated animate__bounceInLeft" : ""
       }`}
     >
@@ -37,12 +37,12 @@ const SinglePost = ({ post }) => {
         <span className="font-semibold text-yellow-500">
           {new Date(post.createdAt).toLocaleDateString()}
         </span>
-        <a
+        <button
           className="rounded bg-gray-600 px-2 py-1 font-bold text-gray-100 hover:bg-gray-500"
           href="/"
         >
           Let me think!
-        </a>
+        </button>
       </div>
       <div className="mt-2">
         <p className="mt-2 ">{post.content}</p>
