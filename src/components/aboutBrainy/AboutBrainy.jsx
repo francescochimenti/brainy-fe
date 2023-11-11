@@ -1,11 +1,12 @@
 import React from "react";
+import "./aboutBrainy.css";
 
 const AboutBrainy = () => {
   return (
     <>
       <section className="animate__animated animate__fadeInLeft bg-white dark:bg-black">
         <div className="mx-auto max-w-screen-xl px-4 py-8 text-center lg:py-16">
-          <h1 className="mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 dark:text-white md:text-5xl lg:text-6xl">
+          <h1 className="typewriter mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 dark:text-white md:text-5xl lg:text-6xl">
             Brainy: The Art of Words in the Visual Era.
           </h1>
           <p className="mb-8 text-lg font-normal text-gray-500 dark:text-gray-400 sm:px-16 lg:px-48 lg:text-xl">
@@ -41,7 +42,31 @@ const AboutBrainy = () => {
           ) : null}
         </div>
       </section>
-      <div class="animate__animated animate__fadeInRight mx-auto max-w-screen-xl items-center gap-8 px-4 py-8 sm:py-16 md:grid md:grid-cols-2 lg:px-6 xl:gap-16">
+      <section class="animate__animated animate__fadeInRight bg-white dark:bg-black">
+        <div class="mx-auto max-w-screen-xl px-4 py-8 text-center lg:px-6 lg:py-16">
+          <dl class="mx-auto grid max-w-screen-md gap-8 text-gray-900 dark:text-white sm:grid-cols-3">
+            <div class="flex flex-col items-center justify-center">
+              <dt class="mb-2 text-3xl font-extrabold md:text-4xl">73M+</dt>
+              <dd class="font-semibold text-gray-500 dark:text-gray-400">
+                users
+              </dd>
+            </div>
+            <div class="flex flex-col items-center justify-center">
+              <dt class="mb-2 text-3xl font-extrabold md:text-4xl">10M+</dt>
+              <dd class="font-semibold text-gray-500 dark:text-gray-400">
+                contributors
+              </dd>
+            </div>
+            <div class="flex flex-col items-center justify-center">
+              <dt class="mb-2 text-3xl font-extrabold md:text-4xl">4M+</dt>
+              <dd class="font-semibold text-gray-500 dark:text-gray-400">
+                organizations
+              </dd>
+            </div>
+          </dl>
+        </div>
+      </section>
+      <div class="animate__animated animate__fadeInLeft mx-auto max-w-screen-xl items-center gap-8 px-4 py-8 sm:py-16 md:grid md:grid-cols-2 lg:px-6 xl:gap-16">
         <img
           class="w-full rounded-md shadow-lg"
           src="https://images.unsplash.com/photo-1523903716430-8b05cc1ce968?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
@@ -51,7 +76,7 @@ const AboutBrainy = () => {
           <h2 class="mb-4 text-4xl font-extrabold tracking-tight text-gray-900 dark:text-white">
             Let's forge more words and insights that unite us
           </h2>
-          <p class="mb-6 font-light text-gray-500 dark:text-gray-400 md:text-lg">
+          <p class="mb-6 text-gray-500 dark:text-gray-400 md:text-lg">
             Brainy revolutionizes the social media experience, transforming the
             way we connect online. The platform places a unique emphasis on the
             power of words, shifting focus from images to the expressive

@@ -16,7 +16,7 @@ const PostContainer = () => {
 
   if (postStatus === "loading") {
     return (
-      <section className="body-font bg-white text-gray-600 dark:bg-gray-900">
+      <section className="body-font bg-white text-gray-600 dark:bg-black">
         <div className="container mx-auto flex flex-col items-center justify-center gap-12  px-5 ">
           {Array.from({ length: 3 }, (_, i) => (
             <div

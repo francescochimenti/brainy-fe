@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { loginReducer } from "../../reducers/loginReducer";
 import { BeatLoader } from "react-spinners";
+import { Link } from "react-router-dom";
 
 const Register = () => {
   const [registerData, setRegisterData] = useState({});
@@ -101,11 +102,8 @@ const Register = () => {
             Here, your thoughts hold significance. Let's cultivate creativity
             together!
           </p>
-          <a
-            href="/"
-            className="inline-flex items-center p-4 text-lg font-medium text-blue-600 hover:underline dark:text-blue-500 md:p-1"
-          >
-            Read more about Brainy
+          <p className="inline-flex items-center p-4 text-lg font-medium text-blue-600 hover:underline dark:text-blue-500 md:p-1">
+            <Link to="/">Read more about Brainy</Link>
             <svg
               className="ml-2 h-3.5 w-3.5"
               aria-hidden="true"
@@ -121,7 +119,7 @@ const Register = () => {
                 d="M1 5h12m0 0L9 1m4 4L9 9"
               />
             </svg>
-          </a>
+          </p>
         </div>
         <div>
           <div className="w-full space-y-8 rounded-lg bg-white p-6 shadow-xl dark:bg-gray-800 sm:p-8 lg:max-w-xl">
@@ -260,12 +258,9 @@ const Register = () => {
               </button>
               <div className="text-sm font-medium text-gray-900 dark:text-white">
                 Already have an account?{" "}
-                <a
-                  href="/login"
-                  className="text-blue-600 hover:underline dark:text-blue-500"
-                >
-                  Login to your account
-                </a>
+                <p className="py-2 text-blue-600 hover:underline dark:text-blue-500">
+                  <Link to="/login">Login to your account</Link>
+                </p>
               </div>
             </form>
           </div>
