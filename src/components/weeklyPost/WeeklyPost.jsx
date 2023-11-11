@@ -20,7 +20,7 @@ const WeeklyPost = () => {
     <section class="bg-white dark:bg-black">
       <div class="mx-auto max-w-screen-xl px-4 py-8 text-center lg:px-6 lg:py-16">
         <div class="animate__animated animate__fadeInLeft mx-auto max-w-screen-sm">
-          <h2 class="mb-4 text-4xl font-extrabold tracking-tight text-gray-900 dark:text-white">
+          <h2 class="mb-4 text-4xl font-extrabold tracking-tight text-gray-900 dark:text-white md:text-5xl lg:text-7xl">
             Posts of the week
           </h2>
           <p class="mb-8 text-gray-500 dark:text-gray-400 sm:text-xl lg:mb-16">
