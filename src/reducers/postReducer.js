@@ -17,7 +17,6 @@ const postsSlice = createSlice({
     status: "idle",
     error: null,
   },
-  reducers: {},
   extraReducers(builder) {
     builder
       .addCase(fetchPosts.pending, (state, action) => {
