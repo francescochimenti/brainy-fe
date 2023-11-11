@@ -1,5 +1,6 @@
 import React, { useRef, useEffect, useState } from "react";
 import LikeButton from "../likeButton/LikeButton";
+import BrainyLogo from "../brainyLogo/BrainyLogo";
 
 const SinglePost = ({ post }) => {
   const [isVisible, setIsVisible] = useState(false);
@@ -35,33 +36,27 @@ const SinglePost = ({ post }) => {
       }`}
     >
       <div className="flex items-center justify-between">
-        <span className="font-semibold text-yellow-500">
-          {new Date(post.createdAt).toLocaleDateString()}
-        </span>
+        <BrainyLogo />
         <LikeButton post={post} />
       </div>
-      <div className="mt-2">
-        <p className="mt-2 ">{post.content}</p>
+      <div className="mt-2 font-semibold">
+        <p className="mt-2 ">"{post.content}"</p>
       </div>
       <div className="mt-4 flex items-center justify-between">
-        <button className="text-blue-600 hover:underline" href="/">
-          {post.likeCount > 0
-            ? post.likeCount === 1
-              ? `${post.likeCount} people think with this`
-              : `${post.likeCount} people's thinks with this`
-            : `No one thinks about this.`}
-        </button>
+        <span className="mr-4 text-slate-500 md:mr-0">
+          {new Date(post.createdAt).toLocaleDateString()}
+        </span>
         <div>
-          <a className="flex items-center" href="/">
+          <div className="flex items-center">
             <img
-              className="mx-4 hidden h-10 w-10 rounded-full object-cover sm:block"
+              className="mr-2 h-10 min-h-[40px] w-10 min-w-[40px] rounded-full object-cover "
               src={post.author.avatar}
               alt="avatar"
             />
-            <h1 className="font-bold ">
+            <span className="font-bold ">
               {post.author.firstName} {post.author.lastName}
-            </h1>
-          </a>
+            </span>
+          </div>
         </div>
       </div>
     </div>

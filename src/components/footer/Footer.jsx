@@ -1,37 +1,16 @@
-import React, { useEffect, useState } from "react";
-import logoDark from "../../assets/logoDark.svg";
-import logoLight from "../../assets/logoLight.svg";
+import React from "react";
+import BrainyLogo from "../brainyLogo/BrainyLogo";
 
 const Footer = () => {
-  const [theme, setTheme] = useState("light");
-
-  useEffect(() => {
-    const currentTheme = window.matchMedia("(prefers-color-scheme: dark)");
-    const handleChange = () => {
-      setTheme(currentTheme.matches ? "dark" : "light");
-    };
-
-    handleChange();
-
-    currentTheme.addEventListener("change", handleChange);
-
-    return () => currentTheme.removeEventListener("change", handleChange);
-  }, []);
   return (
     <footer className="bg-white dark:bg-black">
       <div className="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
         <div className="md:flex md:justify-between">
-          <div className="mb-6 md:mb-0">
-            <a href="/" className="flex items-center">
-              <img
-                src={theme === "dark" ? logoLight : logoDark}
-                className="mr-3 h-8"
-                alt="FlowBite Logo"
-              />
-              <span className="self-center whitespace-nowrap text-2xl font-semibold dark:text-white">
-                Brainy
-              </span>
-            </a>
+          <div className="mb-6 flex md:mb-0">
+            <BrainyLogo />
+            <span className="self-center whitespace-nowrap text-2xl font-semibold dark:text-white">
+              Brainy
+            </span>
           </div>
           <div className="grid grid-cols-2 gap-8 sm:grid-cols-3 sm:gap-6">
             <div>
