@@ -32,7 +32,7 @@ const SinglePost = ({ post }) => {
     <div
       ref={postRef}
       className={`my-4 max-w-4xl rounded-lg  bg-white px-10 py-6 text-gray-700 shadow-md dark:bg-slate-900 dark:text-white md:w-[800px] ${
-        isVisible ? "animate__animated animate__bounceInLeft" : ""
+        isVisible ? "animate__animated animate__fadeInLeft" : ""
       }`}
     >
       <div className="flex items-center justify-between">

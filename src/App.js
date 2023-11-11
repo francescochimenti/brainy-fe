@@ -6,6 +6,7 @@ import Auth from "./pages/auth/Auth";
 import NewAuth from "./pages/newAuth/NewAuth";
 import Profile from "./pages/profile/Profile";
 import About from "./pages/about/About";
+import TopPost from "./pages/topPost/TopPost";
 
 const App = () => {
   return (
@@ -19,6 +20,7 @@ const App = () => {
           <Route element={<ProtectedRoutes />}>
             <Route path="/home" element={<Home />} />
             <Route path="/profile" element={<Profile />} />
+            <Route path="/posts" element={<TopPost />} />
           </Route>
         </Routes>
       </BrowserRouter>

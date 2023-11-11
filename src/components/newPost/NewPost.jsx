@@ -39,7 +39,7 @@ const NewPost = () => {
   };
 
   return (
-    <section className="bg-white dark:bg-black">
+    <section className="animate__animated animate__fadeInRight bg-white dark:bg-black">
       <div className="mx-auto flex max-w-screen-xl flex-col items-center justify-center px-4 py-4 text-center lg:py-5">
         <h3 className="animate__animated animate__slideInDown mb-4 pb-3 text-2xl font-extrabold leading-none tracking-tight text-gray-900 dark:text-white lg:text-3xl">
           Unveil your thoughts, let words do the wonder.

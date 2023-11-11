@@ -17,7 +17,7 @@ const UserPosts = () => {
   }, [session.id]);
 
   return (
-    <div className="flex w-full flex-col items-center justify-center p-4">
+    <div className="animate__animated animate__fadeInRight flex w-full flex-col items-center justify-center p-4">
       {posts.map((post, i) => (
         <div
           key={i}

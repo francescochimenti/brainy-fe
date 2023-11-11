@@ -1,16 +1,16 @@
 import React from "react";
 import Navbar from "../../components/navbar/Navbar";
 import Footer from "../../components/footer/Footer";
-import UserProfile from "../../components/userProfile/UserProfile";
+import WeeklyPost from "../../components/weeklyPost/WeeklyPost";
 
-const Profile = () => {
+const TopPost = () => {
   return (
-    <div>
+    <>
       <Navbar />
-      <UserProfile />
+      <WeeklyPost />
       <Footer />
-    </div>
+    </>
   );
 };
 
-export default Profile;
+export default TopPost;

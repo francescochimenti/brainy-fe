@@ -7,7 +7,7 @@ const UserProfile = () => {
 
   return (
     <div className="mx-auto flex max-w-screen-xl flex-col items-center justify-center bg-white dark:bg-black">
-      <div className="flex max-w-screen-xl flex-col items-center justify-center gap-11 text-center">
+      <div className="animate__animated animate__fadeInLeft flex max-w-screen-xl flex-col items-center justify-center gap-11 text-center">
         <img
           className="mb-2.5 mt-1 h-32 w-32 rounded-full p-1 ring-2 ring-gray-300 dark:ring-gray-500"
           src={session.avatar}
