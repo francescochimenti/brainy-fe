@@ -7,6 +7,7 @@ import NewAuth from "./pages/newAuth/NewAuth";
 import Profile from "./pages/profile/Profile";
 import About from "./pages/about/About";
 import TopPost from "./pages/topPost/TopPost";
+import ErrorPage from "./pages/errorPage/ErrorPage";
 
 const App = () => {
   return (
@@ -16,6 +17,7 @@ const App = () => {
           <Route path="/" element={<About />} />
           <Route path="/login" element={<Auth />} />
           <Route path="/register" element={<NewAuth />} />
+          <Route path="*" element={<ErrorPage />} />
 
           <Route element={<ProtectedRoutes />}>
             <Route path="/home" element={<Home />} />
