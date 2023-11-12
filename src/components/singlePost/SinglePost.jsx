@@ -1,6 +1,7 @@
 import React, { useRef, useEffect, useState } from "react";
 import LikeButton from "../likeButton/LikeButton";
 import BrainyLogo from "../brainyLogo/BrainyLogo";
+import { Link } from "react-router-dom";
 
 const SinglePost = ({ post }) => {
   const [isVisible, setIsVisible] = useState(false);
@@ -48,13 +49,18 @@ const SinglePost = ({ post }) => {
         </span>
         <div>
           <div className="flex items-center">
-            <img
-              className="mr-2 h-10 min-h-[40px] w-10 min-w-[40px] rounded-full object-cover "
-              src={post.author.avatar}
-              alt="avatar"
-            />
-            <span className="font-semibold ">
-              {post.author.firstName} {post.author.lastName}
+            <Link to={`/profile/${post.author._id}`}>
+              <img
+                className="mr-2 h-10 min-h-[40px] w-10 min-w-[40px] rounded-full object-cover "
+                src={post.author.avatar}
+                alt="avatar"
+              />
+            </Link>
+
+            <span className="font-semibold">
+              <Link to={`/profile/${post.author._id}`}>
+                {post.author.firstName} {post.author.lastName}
+              </Link>
             </span>
           </div>
         </div>

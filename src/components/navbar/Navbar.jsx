@@ -3,10 +3,12 @@ import Hamburger from "hamburger-react";
 import logoDark from "../../assets/logoDark.svg";
 import logoLight from "../../assets/logoLight.svg";
 import { Link } from "react-router-dom";
+import useSession from "../../hooks/useSession";
 
 const Navbar = () => {
   const [isOpen, setOpen] = useState(false);
   const [theme, setTheme] = useState("light");
+  const user = useSession();
 
   useEffect(() => {
     const currentTheme = window.matchMedia("(prefers-color-scheme: dark)");
@@ -57,7 +59,7 @@ const Navbar = () => {
                   <Link to="/home">Home</Link>
                 </li>
                 <li className="block rounded py-2 pl-3 pr-4 text-gray-900 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:border-0 md:p-0 md:hover:bg-transparent md:hover:text-blue-700 md:dark:hover:bg-transparent md:dark:hover:text-blue-500">
-                  <Link to="/profile">Profile</Link>
+                  <Link to={`/profile/${user.id}`}>Profile</Link>
                 </li>
                 <li className="block rounded py-2 pl-3 pr-4 text-gray-900 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:border-0 md:p-0 md:hover:bg-transparent md:hover:text-blue-700 md:dark:hover:bg-transparent md:dark:hover:text-blue-500">
                   <Link to="/posts">Posts of the week</Link>

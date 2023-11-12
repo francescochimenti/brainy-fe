@@ -45,7 +45,10 @@ const Register = () => {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    if (registerData.password !== correctPsw) {
+    if (
+      registerData.password !== correctPsw ||
+      registerData.password.length < 8
+    ) {
       setPassChecker(true);
       return;
     }
@@ -247,7 +250,7 @@ const Register = () => {
               </div>
               {passChecker && (
                 <p className="text-md font-semibold text-red-500">
-                  Passwords don't match.
+                  Passwords don't match or is shorter than 8 characters.
                 </p>
               )}
               <button
