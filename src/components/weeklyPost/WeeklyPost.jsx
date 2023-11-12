@@ -10,7 +10,6 @@ const WeeklyPost = () => {
         `${process.env.REACT_APP_SERVER_BASE_URL}/posts/popular`,
       );
       setPosts(res.data.posts);
-      console.log(posts);
     };
     fetchPosts();
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -31,7 +30,7 @@ const WeeklyPost = () => {
         <div class="mb-8 grid lg:mb-12 lg:grid-cols-2">
           {posts.map((post, i) => (
             <figure
-              class="animate__animated animate__fadeInUp mx-auto max-w-screen-md p-4"
+              class="animate__animated animate__fadeInRight mx-auto max-w-screen-md p-4"
               key={i}
             >
               <svg

@@ -53,7 +53,7 @@ const SinglePost = ({ post }) => {
               src={post.author.avatar}
               alt="avatar"
             />
-            <span className="font-bold ">
+            <span className="font-semibold ">
               {post.author.firstName} {post.author.lastName}
             </span>
           </div>
