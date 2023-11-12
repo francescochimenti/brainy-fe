@@ -2,10 +2,13 @@ import React, { useRef, useEffect, useState } from "react";
 import LikeButton from "../likeButton/LikeButton";
 import BrainyLogo from "../brainyLogo/BrainyLogo";
 import { Link } from "react-router-dom";
+import DeleteButton from "../deleteButton/DeleteButton";
+import useSession from "../../hooks/useSession";
 
 const SinglePost = ({ post }) => {
   const [isVisible, setIsVisible] = useState(false);
   const postRef = useRef(null);
+  const user = useSession();
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -37,9 +40,14 @@ const SinglePost = ({ post }) => {
           isVisible ? "animate__animated animate__bounceInLeft" : ""
         }`}
       >
-        <div className="flex items-center justify-between">
+        <div className="mb-6 flex items-center justify-between">
           <BrainyLogo />
-          <LikeButton post={post} />
+          <span>
+            <LikeButton post={post} />
+            {post.author._id === user.id || user.role === "CEO" ? (
+              <DeleteButton postId={post._id} post={post} />
+            ) : null}
+          </span>
         </div>
         <div className="mt-2 font-semibold">
           <p className="mt-2 ">"{post.content}"</p>
