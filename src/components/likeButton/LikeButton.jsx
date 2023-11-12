@@ -30,7 +30,7 @@ const LikeButton = ({ post }) => {
     <button
       className={
         liked
-          ? "rounded bg-red-600 px-2 py-1 font-bold text-gray-100 hover:bg-red-500"
+          ? "rounded bg-blue-400 px-2 py-1 font-bold text-gray-100 hover:bg-red-500"
           : "rounded bg-black px-2 py-1 font-bold text-white hover:bg-gray-500 dark:bg-white dark:text-black"
       }
       onClick={() => handleLikeClick(post._id)}

@@ -36,7 +36,7 @@ const SinglePost = ({ post }) => {
     return (
       <div
         ref={postRef}
-        className={`my-4 max-w-4xl rounded-lg  bg-white px-10 py-6 text-gray-700 shadow-md dark:bg-black dark:text-white dark:shadow-sm dark:shadow-white md:w-[800px] ${
+        className={`my-4 max-w-4xl rounded-lg  bg-white px-10 py-6 text-gray-700 shadow-md dark:bg-black dark:text-white dark:shadow-blue-300 md:w-[800px] ${
           isVisible ? "animate__animated animate__bounceInLeft" : ""
         }`}
       >
@@ -81,7 +81,7 @@ const SinglePost = ({ post }) => {
     return (
       <div
         ref={postRef}
-        className={`my-4 max-w-4xl rounded-lg  bg-white px-10 py-6 text-gray-700 shadow-md dark:bg-black dark:text-white dark:shadow-sm dark:shadow-white md:w-[800px] ${
+        className={`my-4 max-w-4xl rounded-lg  bg-white px-10 py-6 text-gray-700 shadow-lg dark:bg-black dark:text-white dark:shadow-yellow-300 md:w-[800px] ${
           isVisible ? "animate__animated animate__bounceInLeft" : ""
         }`}
       >

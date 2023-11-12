@@ -17,7 +17,7 @@ const DeleteButton = ({ postId, post }) => {
     setIsEditModalOpen(!isEditModalOpen);
   };
 
-  const handleButtonClick = () => {
+  const closePrevModal = () => {
     toggleDeleteModal();
     toggleEditModal();
   };
@@ -63,11 +63,11 @@ const DeleteButton = ({ postId, post }) => {
         tabIndex="-1"
         className={`fixed left-0 right-0 top-0 z-50 ${
           isDeleteModalOpen ? "flex" : "hidden"
-        } h-[calc(100%-1rem)] max-h-full w-full items-center justify-center overflow-y-auto overflow-x-hidden md:inset-0`}
+        } h-full max-h-full w-full items-center justify-center overflow-y-auto overflow-x-hidden md:inset-0`}
       >
-        <div className="relative max-h-full w-full max-w-lg p-4">
-          <div className="relative rounded-lg bg-white shadow dark:bg-gray-700">
-            <div className="p-4 text-center md:p-5">
+        <div className="relative max-h-full w-full p-4">
+          <div className="relative rounded-lg bg-white dark:bg-black">
+            <div className="p-4 text-center md:p-8">
               <h3 className="mb-5 text-lg font-normal text-gray-500 dark:text-gray-400">
                 Are you sure you want to delete this post?
               </h3>
@@ -79,7 +79,7 @@ const DeleteButton = ({ postId, post }) => {
                 Yes, I'm sure
               </button>
               <button
-                onClick={handleButtonClick}
+                onClick={closePrevModal}
                 className="me-2 inline-flex items-center rounded-lg bg-green-600 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-green-800 focus:outline-none focus:ring-4 focus:ring-green-300 dark:focus:ring-green-800"
                 type="button"
               >
@@ -87,7 +87,7 @@ const DeleteButton = ({ postId, post }) => {
               </button>
               <button
                 onClick={toggleDeleteModal}
-                className="me-2 mt-1 rounded-lg border border-gray-200 bg-white px-5 py-2.5 text-sm font-medium text-gray-500 hover:bg-gray-100 hover:text-gray-900 focus:z-10 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:border-gray-500 dark:bg-gray-700 dark:text-gray-300 dark:hover:bg-gray-600 dark:hover:text-white dark:focus:ring-gray-600 md:mt-0"
+                className="me-2 mt-1 rounded-lg border border-gray-200 bg-white px-5 py-2.5 text-sm font-medium text-gray-500 hover:bg-gray-100 hover:text-gray-900 focus:z-10 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:border-gray-500 dark:bg-black dark:text-gray-300 dark:hover:bg-gray-600 dark:hover:text-white dark:focus:ring-gray-600 md:mt-0"
                 type="button"
               >
                 No, close
@@ -103,10 +103,10 @@ const DeleteButton = ({ postId, post }) => {
         tabIndex="-1"
         className={`fixed left-0 right-0 top-0 z-50 ${
           isEditModalOpen ? "flex" : "hidden"
-        } h-[400px] max-h-full w-full items-center justify-center overflow-y-auto overflow-x-hidden md:inset-0`}
+        } h-full max-h-full w-full items-center justify-center overflow-y-auto overflow-x-hidden md:inset-0`}
       >
-        <div class="relative max-h-full w-full max-w-md p-4">
-          <div class="relative rounded-lg bg-white shadow dark:bg-gray-700">
+        <div class="relative max-h-full w-full">
+          <div class="relative w-full rounded-lg bg-white p-8 shadow dark:bg-black">
             <div class="flex items-center justify-between rounded-t border-b p-4 dark:border-gray-600 md:p-2">
               <h3 class="text-lg font-semibold text-gray-900 dark:text-white">
                 Edit post
@@ -142,7 +142,7 @@ const DeleteButton = ({ postId, post }) => {
                   type="text"
                   name="content"
                   id="name"
-                  class="focus:ring-primary-600 focus:border-primary-600 dark:focus:ring-primary-500 dark:focus:border-primary-500 block w-full rounded-lg border bg-gray-50 p-2.5 text-sm text-gray-900 shadow-md dark:bg-gray-600 dark:text-white dark:placeholder-gray-400"
+                  class="focus:ring-primary-600 focus:border-primary-600 dark:focus:ring-primary-500 dark:focus:border-primary-500 block w-full rounded-lg border bg-gray-50 p-2.5 text-sm text-gray-900 shadow-md dark:bg-black dark:text-white dark:placeholder-gray-400"
                   value={postContent.content}
                   onChange={(e) => setPostContent({ content: e.target.value })}
                 />
