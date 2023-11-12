@@ -6,12 +6,13 @@ import { BeatLoader } from "react-spinners";
 import { Link } from "react-router-dom";
 
 const Login = () => {
-  const [loginData, setLoginData] = useState({});
   const navigate = useNavigate();
   const dispatch = useDispatch();
+
+  const [loginData, setLoginData] = useState({});
+  const [loading, setLoading] = useState(false);
   const token = useSelector((state) => state.login.loginData.token);
   const error = useSelector((state) => state.login.error);
-  const [loading, setLoading] = useState(false);
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -30,10 +31,12 @@ const Login = () => {
   };
 
   useEffect(() => {
+    //When the user logs in, the token is saved in the local storage then the user is redirected to the home page
     if (token) {
       localStorage.setItem("loggedInUser", JSON.stringify(token));
       navigate("/home");
     }
+    //This checks if the user is logged in and redirects to the home page
     if (localStorage.getItem("loggedInUser")) {
       navigate("/home");
     }

@@ -1,6 +1,7 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 
+// Thunk to get all likes
 export const postLikes = createAsyncThunk(
   "likes/postLikes",
   async ({ postId, userId }) => {
@@ -14,6 +15,7 @@ export const postLikes = createAsyncThunk(
   },
 );
 
+// Thunk to delete a like
 export const deleteLikes = createAsyncThunk(
   "likes/deleteLikes",
   async ({ postId, userId }) => {

@@ -9,6 +9,9 @@ import About from "./pages/about/About";
 import TopPost from "./pages/topPost/TopPost";
 import ErrorPage from "./pages/errorPage/ErrorPage";
 
+//This is the main component of the application, it is responsible for rendering the routes and the components
+//I set the div with the class bg-white dark:bg-black to change the background color of the application
+
 const App = () => {
   return (
     <div className="bg-white dark:bg-black">

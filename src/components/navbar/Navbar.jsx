@@ -10,6 +10,7 @@ const Navbar = () => {
   const [theme, setTheme] = useState("light");
   const user = useSession();
 
+  //This useEffect checks the user's system theme and sets the theme to dark or light for change the svg logo
   useEffect(() => {
     const currentTheme = window.matchMedia("(prefers-color-scheme: dark)");
     const handleChange = () => {

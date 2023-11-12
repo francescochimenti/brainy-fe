@@ -9,12 +9,14 @@ const LikeButton = ({ post }) => {
   const dispatch = useDispatch();
   const user = useSession();
 
+  //This useEffect set the like button to true if the user has already liked the post
   useEffect(() => {
     if (post.likes.includes(user.id)) {
       setLiked(true);
     }
   }, [post.likes, user.id]);
 
+  //This function handles the like button click and dispatches the like or delete like action
   const handleLikeClick = (postId) => {
     if (!liked) {
       dispatch(postLikes({ postId, userId: user.id }));

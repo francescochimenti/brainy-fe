@@ -11,27 +11,32 @@ const SinglePost = ({ post }) => {
   const user = useSession();
 
   useEffect(() => {
+    // Observer to detect when element becomes visible
     const observer = new IntersectionObserver(
       (entries) => {
+        // If element is visible, set isVisible to true and stop observing
         if (entries[0].isIntersecting) {
           setIsVisible(true);
           observer.disconnect();
         }
       },
+      // Trigger when element is 10% visible
       { threshold: 0.1 },
     );
 
+    // If element exists, start observing
     if (postRef.current) {
       observer.observe(postRef.current);
     }
 
+    // On component unmount, stop observing
     return () => {
       if (postRef.current) {
         // eslint-disable-next-line react-hooks/exhaustive-deps
         observer.unobserve(postRef.current);
       }
     };
-  }, []);
+  }, []); // Run once on component mount
   if (post.author.role !== "Company")
     return (
       <div
