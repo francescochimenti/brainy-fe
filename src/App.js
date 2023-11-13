@@ -7,6 +7,7 @@ import NewAuth from "./pages/newAuth/NewAuth";
 import Profile from "./pages/profile/Profile";
 import About from "./pages/about/About";
 import TopPost from "./pages/topPost/TopPost";
+import Settings from "./pages/settings/Settings";
 import ErrorPage from "./pages/errorPage/ErrorPage";
 
 //This is the main component of the application, it is responsible for rendering the routes and the components
@@ -26,6 +27,7 @@ const App = () => {
             <Route path="/home" element={<Home />} />
             <Route path="/profile/:id" element={<Profile />} />
             <Route path="/posts" element={<TopPost />} />
+            <Route path="/settings" element={<Settings />} />
           </Route>
         </Routes>
       </BrowserRouter>

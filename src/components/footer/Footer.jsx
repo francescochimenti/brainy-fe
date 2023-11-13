@@ -19,7 +19,7 @@ const Footer = () => {
               </h2>
               <ul className="font-medium text-gray-500 dark:text-gray-400">
                 <li className="mb-4">
-                  <a href="https://flowbite.com/" className="hover:underline">
+                  <a href="/" className="hover:underline">
                     Brainy
                   </a>
                 </li>
@@ -70,7 +70,7 @@ const Footer = () => {
         <div className="sm:flex sm:items-center sm:justify-between">
           <span className="text-sm text-gray-500 dark:text-gray-400 sm:text-center">
             © 2023{" "}
-            <a href="https://flowbite.com/" className="hover:underline">
+            <a href="/" className="hover:underline">
               Brainy™
             </a>
             . All Rights Reserved.
@@ -165,7 +165,7 @@ const Footer = () => {
                   clipRule="evenodd"
                 />
               </svg>
-              <span className="sr-only">Dribbble account</span>
+              <span className="sr-only">Dribble account</span>
             </a>
           </div>
         </div>

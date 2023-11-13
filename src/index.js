@@ -10,14 +10,14 @@ import loginReducer from "./reducers/loginReducer";
 import postReducer from "./reducers/postReducer";
 import likeReducer from "./reducers/likeReducer";
 
-//just a simple reducer to combine all reducers
-
+//This reducer is responsible for combining all the reducers of the application
 const reducer = combineReducers({
   login: loginReducer,
   posts: postReducer,
   likes: likeReducer,
 });
 
+//This is the store of the application
 const store = configureStore({
   reducer,
 });
