@@ -1,70 +1,39 @@
-# Getting Started with Create React App
+# Brainy
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Brainy: La riscoperta delle Parole in un Mondo Visivo
 
-## Available Scripts
+### Presentazione del Progetto
 
-In the project directory, you can run:
+Brainy si propone come una rivoluzionaria piattaforma di social networking che sfida le convenzioni dominanti. In un universo digitale saturato di contenuti visivi, Brainy valorizza la potenza delle parole, spingendo gli utenti a esprimere la loro creatività e condividere pensieri puri e autentici.
 
-### `npm start`
+### Obiettivo del Progetto
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Brainy è più di un social network; è un movimento, un invito alla genuinità in un mondo digitale sovraccarico. Miriamo a risvegliare l'anima creativa di ogni individuo, creando un rifugio dove le parole e le idee sono le vere protagoniste.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Caratteristiche Principali
 
-### `npm test`
+- **Design Minimalista:** L'interfaccia utente di Brainy è progettata per essere minimalista, mettendo in risalto la purezza delle parole senza distrazioni visive.
+- **Interazioni Uniche:** Abbandoniamo i tradizionali pulsanti "Mi piace" per introdurre interazioni più riflessive, come "this let me thinking" e "this doesn’t let me thinking".
+- **Personalizzazione e Controllo:** Gli utenti possono eliminare i post, modificare il proprio profilo e personalizzare la loro esperienza.
+- **Focus sulle Aziende:** Brainy offre alle aziende un nuovo modo di connettersi con il pubblico attraverso parole potenti e pubblicità uniche.
+- **Celebrazione della Scrittura:** Con i "Post of the week", premiamo le riflessioni più profonde e stimolanti degli utenti.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Tecnologie Utilizzate
 
-### `npm run build`
+- **Front-end:** React, Tailwind CSS
+- **Back-end:** Node.js con Express
+- **Database:** Mongoose con MongoDB
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Come Contribuire
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Sei interessato a contribuire al progetto Brainy? Ecco come puoi iniziare:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+1. **Fork il Repository:** Crea una tua copia del progetto.
+2. **Crea un Branch:** Apporta le tue modifiche in un nuovo branch.
+3. **Invia una Pull Request:** Invia le tue modifiche per la revisione.
 
-### `npm run eject`
+### Licenza
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+---
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+_© [Francesco Chimenti], [2023] - Brainy Project_
