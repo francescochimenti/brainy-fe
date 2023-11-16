@@ -4,6 +4,7 @@ import axios from "axios";
 const WeeklyPost = () => {
   const [posts, setPosts] = useState([]);
 
+  // Fetch the top posts of the week
   useEffect(() => {
     const fetchPosts = async () => {
       const res = await axios.get(
