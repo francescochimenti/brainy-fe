@@ -42,11 +42,9 @@ const UserProfile = () => {
                         <p className="mb-4 ml-40 font-bold text-yellow-600 dark:text-yellow-500 md:ml-0">
                           {user.role} of Brainy
                         </p>
-                        {user._id === user._id ? (
-                          <Link to={"/settings"}>
-                            <AiTwotoneSetting className="mb-4 text-2xl text-black dark:text-white md:mr-12 lg:text-4xl" />
-                          </Link>
-                        ) : null}
+                        <Link to={"/settings"}>
+                          <AiTwotoneSetting className="mb-4 text-2xl text-black dark:text-white md:mr-12 lg:text-4xl" />
+                        </Link>
                       </div>
                       <p className="mb-6 px-5 font-bold text-neutral-500 dark:text-neutral-300">
                         "No posts yet"
