@@ -1,17 +1,37 @@
 import React, { useEffect, useState } from "react";
-import useSession from "../../hooks/useSession";
 import axios from "axios";
+import useSession from "../../hooks/useSession";
 
 const UserSetting = () => {
-  const user = useSession();
   const [isUpdated, setIsUpdated] = useState(false);
+  const userId = useSession();
 
   const [registerData, setRegisterData] = useState({
-    firstName: user.firstName,
-    lastName: user.lastName,
-    email: user.email,
-    avatar: user.avatar,
+    firstName: "",
+    lastName: "",
+    email: "",
+    avatar: "",
   });
+
+  const getUserData = async () => {
+    try {
+      const response = await axios.get(
+        `${process.env.REACT_APP_SERVER_BASE_URL}/users/${userId.id}`,
+      );
+      setRegisterData({
+        firstName: response.data.user.firstName,
+        lastName: response.data.user.lastName,
+        email: response.data.user.email,
+        avatar: response.data.user.avatar,
+      });
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  useEffect(() => {
+    getUserData();
+  }, []);
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -32,10 +52,20 @@ const UserSetting = () => {
           avatar: uploadedFile.avatar,
         };
         await axios.patch(
-          `${process.env.REACT_APP_SERVER_BASE_URL}/users/update/${user.id}`,
+          `${process.env.REACT_APP_SERVER_BASE_URL}/users/update/${userId.id}`,
           finalBody,
         );
         setIsUpdated(true);
+      } catch (error) {
+        console.log(error);
+      }
+    } else {
+      e.preventDefault();
+      try {
+        await axios.patch(
+          `${process.env.REACT_APP_SERVER_BASE_URL}/users/update/${userId.id}`,
+          registerData,
+        );
       } catch (error) {
         console.log(error);
       }
@@ -66,7 +96,7 @@ const UserSetting = () => {
     e.preventDefault();
     try {
       await axios.delete(
-        `${process.env.REACT_APP_SERVER_BASE_URL}/users/delete/${user.id}`,
+        `${process.env.REACT_APP_SERVER_BASE_URL}/users/delete/${userId.id}`,
       );
       localStorage.removeItem("loggedInUser");
       window.location = "/";
